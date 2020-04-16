@@ -29,10 +29,22 @@
     display: flex;
     flex-direction: column;
     margin-top: 10%;
+    width: fit-content;
 }
 
 .Param {
     display: flex;
     flex-direction: row;
     color: black;
+}
+
+#buttonDiv {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.MainContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
