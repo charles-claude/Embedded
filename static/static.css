@@ -6,7 +6,6 @@
 }
 .WeatherContainer {
     position: relative;
-    text-align: center;
     color: white;
     background-color: lightgray;
     border: 1 solid gray;
@@ -21,16 +20,19 @@
     justify-content: center;
 }
 
-.CoronaContainer {
-    border: 1 solid gray;
-    width: 30%;
-    background-color: lightgray;
+#ContainerTitle{
+    text-align: center;
+    color: black;
 }
 
-.AppTitle {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black
-  }
+.ParamContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+.Param {
+    display: flex;
+    flex-direction: row;
+    color: black;
+}
