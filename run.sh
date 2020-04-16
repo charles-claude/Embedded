@@ -1,11 +1,8 @@
 #!/bin/sh
 
-export FLASK_APP=server.py
-
-
-
 
 startme() {
+    export FLASK_APP=server.py
     docker-compose up --build &
     echo $! >>bjtubot_docker.pid
     flask run &
@@ -13,8 +10,10 @@ startme() {
 }
 
 stopme() {
-    kill $(cat njtubot_docker.pid)
-    kill $(cat njtubot_server.pid)
+    kill -9 $(cat bjtubot_docker.pid)
+    rm bjtubot_docker.pid
+    kill -9 $(cat bjtubot_server.pid)
+    rm bjtubot_server.pid
 }
 
 case "$1" in
