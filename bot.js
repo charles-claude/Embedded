@@ -3,7 +3,7 @@
 const tmi = require('tmi.js');
 const fs = require("fs");
 
-config = {}
+var config = {}
 
 const tmiConfig = {
     options: {
@@ -34,7 +34,7 @@ else {
 }
 
 
-console.log(student);
+console.log(config);
 
 
 
