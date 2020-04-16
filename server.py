@@ -12,7 +12,7 @@ def home():
 def config():
 
     if (request.method == 'GET'):
-        if (!os.path.exists(file_name):
+        if (not os.path.exists(file_name)):
             return ({})
         else:
             f = open("bjtubot.conf", "r")
