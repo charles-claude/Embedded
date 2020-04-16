@@ -11,9 +11,9 @@ startme() {
 }
 
 stopme() {
-    kill -9 $(cat bjtubot_docker.pid)
+    kill -15 $(cat bjtubot_docker.pid)
     rm bjtubot_docker.pid
-    kill -9 $(cat bjtubot_server.pid)
+    kill -15 $(cat bjtubot_server.pid)
     rm bjtubot_server.pid
 }
 
