@@ -17,10 +17,17 @@ stopme() {
     rm bjtubot_server.pid
 }
 
+restartme() {
+    kill -15 $(cat bjtubot_docker.pid)
+    rm bjtubot_docker.pid
+    docker-compose up --build &
+    echo $! >>bjtubot_docker.pid
+}
+
 case "$1" in
     start)   startme ;;
     stop)    stopme ;;
-    restart) stopme; startme ;;
+    restart) restartme ;;
     *) echo "usage: $0 start|stop|restart" >&2
        exit 1
        ;;

@@ -1,6 +1,9 @@
 'use strict';
 
 const tmi = require('tmi.js');
+const fs = require("fs");
+
+var config = {}
 
 const tmiConfig = {
     options: {
@@ -17,6 +20,23 @@ const tmiConfig = {
         "nerilwyn"
     ]
 };
+
+
+
+if (!fs.existsSync("bjtubot.conf")) {
+    config = {
+	lol: "ol"
+    };
+}
+else {
+    let rawdata = fs.readFileSync('bjtubot.conf');
+    config = JSON.parse(rawdata);
+}
+
+
+console.log(config);
+
+
 
 let client = new tmi.client(tmiConfig);
 
