@@ -2,6 +2,4 @@ version: '3'
 services:
   host:
     build: .
-    env_file:
-      - ./credentials.env
     restart: always
