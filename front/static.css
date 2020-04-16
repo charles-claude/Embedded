@@ -1,0 +1,36 @@
+.Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 6%;
+}
+.WeatherContainer {
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: lightgray;
+    border: 1 solid gray;
+    width: 30%;
+}
+
+.TimeContainer {
+    border: 1 solid gray;
+    width: 30%;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+}
+
+.CoronaContainer {
+    border: 1 solid gray;
+    width: 30%;
+    background-color: lightgray;
+}
+
+.AppTitle {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black
+  }
