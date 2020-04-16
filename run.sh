@@ -1,8 +1,9 @@
 #!/bin/sh
 
+
 startme() {
     export FLASK_APP=server.py
-    
+
     docker-compose up --build &
     echo $! >>bjtubot_docker.pid
     flask run &
