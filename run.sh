@@ -20,6 +20,8 @@ stopme() {
 restartme() {
     kill -15 $(cat bjtubot_docker.pid)
     rm bjtubot_docker.pid
+    echo "restarting sleep 5"
+    sleep 5
     docker-compose up --build &
     echo $! >>bjtubot_docker.pid
 }

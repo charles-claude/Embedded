@@ -4,9 +4,10 @@ $("#update").click(function(){
     var DataJson = '{ "Repeat" : '+ repeat + '}'
 
     $.ajax({
-        url: "127.0.0.1/config",
+        url: "/config",
         method: "POST",
         data: DataJson,
         dataType : "json",
+        contentType: "application/json",
     })
 });

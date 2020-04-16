@@ -1,6 +1,7 @@
 
 from flask import Flask, url_for, render_template, request
 import os
+import json
 
 app = Flask(__name__)
 
@@ -17,11 +18,13 @@ def config():
         else:
             f = open("bjtubot.conf", "r")
             return (f.read())
-        
+
     elif (request.method == 'POST'):
-        data = request.form
+        data = request.get_json()
+        print(data)
         f = open("bjtubot.conf", "w")
-        f.write(data)
+        f.write(json.dumps(data))
         f.close()
-        command = os.popen('./run.sh restart')
+        command = os.system('bash run.sh restart')
+
     return ""
