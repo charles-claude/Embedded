@@ -14,17 +14,36 @@
             <div class="MainContainer">
             <div class="ParamContainer">
                 <div class="Param">
-                    <input type="checkbox" id="repeat" name="repeat"
-                    checked>
+                    <input type="checkbox" id="repeat" name="repeat">
                     <label for="repeat">Repeat Mode</label>
                 </div>
                 <div class="Param">
-                    <div>
-                    <input type="checkbox" id="bannword" name="bannword">
-                    <label for="bannword">Add a bann word</label>
+                    <input type="checkbox" id="slow" name="slow">
+                    <label for="slow">Slow Mode</label>
+                    <input type="number" min="1" id ="slowduration" placeholder="Slow Duration">
                 </div>
+                <div class="Param">
+                    <input type="checkbox" id="unique" name="unique">
+                    <label for="unique">Unique Mode</label>
+                </div>
+                <div class="Param">
                     <div class="Tinput">
+                        <label>Add a bann word</label>
                         <input type="text" id="bword" name="bword" placeholder="Word to be banned">
+                    </div>
+                </div>
+
+                <div class="Param">
+                    <div>
+                        <label>Change bot color</label>
+                        <input type="color" id='colorpicker'>
+                    </div>
+                </div>
+                <div class="Param">
+                    <div>
+                        <input type="checkbox" id ="samecolor">
+                        <label for="samecolor">Use same color for bot's messages ?</label>
+                        </label>
                     </div>
                 </div>
             </div>
