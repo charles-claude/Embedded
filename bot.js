@@ -31,7 +31,7 @@ if (!fs.existsSync("bjtubot.conf")) {
 	Slow: false,
 	Slowduration: 30,
 	Unique: false,
-	Color: "#000000",
+	Color: "Red",
 	Samecolor: false
     };
 }
