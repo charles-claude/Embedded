@@ -1,7 +1,7 @@
 
 $("#update").click(function(){
     var repeat = document.getElementById("repeat").checked;
-    var bannword = document.getElementById("bannword").value
+    var bannword = document.getElementById("bword").value
     var bannlist = bannword.split(',')
     var DataJson = { Repeat :  repeat , Bannword : bannlist}
     var DataString = JSON.stringify(DataJson)
