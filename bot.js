@@ -50,7 +50,25 @@ client.connect();
 
 client.on('connected', (adress, port) => {
     console.log(client.getUsername() + " s'est connecté sur : " + adress + ", port : " + port);
-    client.say("nerilwyn", "Hello Twitch ! I'm a real human Kappa");
+
+    //set slow mode
+    if (config.Slow == true) {
+        client.say(channel, "/slow " + config.Slowduration); 
+    } else {
+        client.say(channel, "/slowoff")
+    }
+
+    //set uniquechat
+    if (config.Unique == true) {
+        client.say(channel, "/uniquechat");
+    } else {
+        client.say(channel, "/uniquechatoff");
+    }
+
+    //set color
+    client.say(channel, "/color " + config.Color);
+
+    client.say("nerilwyn", "Kappa");
 });
 
 /*client.on('chat', (channel, user, message, isSelf) => {
@@ -64,7 +82,16 @@ client.on('chat', (channel, user, message, isSelf) => {
     let full_cmd = cmd_parser(message);
 
     if (full_cmd != null) {
-//cmd
+        //cmd
+        let cmd = full_cmd[1]
+
+        switch(cmd) {
+            case "hi":
+            case "Hi":
+                client.say(channel, "Greetings " + user['display-name']);
+                break;
+        }
+
     } else {
 
         //ban word
