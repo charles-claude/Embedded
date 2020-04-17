@@ -27,6 +27,7 @@ const tmiConfig = {
 if (!fs.existsSync("bjtubot.conf")) {
     config = {
 	Repeat: false,
+        Bannword: [],
 	Slow: false,
 	Slowduration: 30,
 	Unique: false,
@@ -55,6 +56,7 @@ client.connect();
 
 client.on('connected', (adress, port) => {
     console.log(client.getUsername() + " s'est connecté sur : " + adress + ", port : " + port);
+    let channel = "nerilwyn"
 
     //set slow mode
     if (config.Slow == true) {
@@ -90,7 +92,7 @@ client.on('chat', (channel, user, message, isSelf) => {
         //cmd
         let cmd = full_cmd[1]
 
-	let me = config.Samecolor ? "/me " : ""; 
+	let me = config.Samecolor ? "/me " : "";
 
         switch(cmd) {
         case "hi": case "Hi":
@@ -100,10 +102,11 @@ client.on('chat', (channel, user, message, isSelf) => {
 	    client.say(channel, me + "You're a wizard " + user['display-name']);
 	    break;
 	case "bjtu":
-	    client.say(channel, me + "BJTU: " + "http://en.njtu.edu.cn/"
+	    client.say(channel, me + "BJTU: " + "http://en.njtu.edu.cn/");
+            break;
 	default:
 	    client.say(channel, me + "Command " + cmd + " don't exist here !");
-	    
+
         }
 
     } else {
