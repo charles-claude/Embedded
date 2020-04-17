@@ -1,12 +1,16 @@
 
 $("#update").click(function(){
     var repeat = document.getElementById("repeat").checked;
-    var DataJson = '{ "Repeat" : '+ repeat + '}'
+    var bannword = document.getElementById("bannword").value
+    var bannlist = bannword.split(',')
+    var DataJson = { Repeat :  repeat , Bannword : bannlist}
+    var DataString = JSON.stringify(DataJson)
+
 
     $.ajax({
         url: "/config",
         method: "POST",
-        data: DataJson,
+        data: DataString,
         dataType : "json",
         contentType: "application/json",
     })

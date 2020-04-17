@@ -38,13 +38,21 @@
     color: black;
 }
 
+input {
+    text-align: center;
+    margin-left: 10px;
+}
+
+
 #buttonDiv {
     width: fit-content;
     margin: 0 auto;
+    margin-bottom: 2%;
 }
 
 .MainContainer{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    height: 80%;
 }

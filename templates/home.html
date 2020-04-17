@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Document HTML</title>
-  <link rel="stylesheet" type="text/css" href="/static/static.css">
+  <link rel="stylesheet" type="text/css" href="../static/static.css">
 </head>
 <body>
     <div class="Container">
@@ -18,9 +18,15 @@
                     checked>
                     <label for="repeat">Repeat Mode</label>
                 </div>
-            </div>
-            <div class="ParamContainer">
-               lol
+                <div class="Param">
+                    <div>
+                    <input type="checkbox" id="bannword" name="bannword">
+                    <label for="bannword">Add a bann word</label>
+                </div>
+                    <div class="Tinput">
+                        <input type="text" id="bword" name="bword" placeholder="Word to be banned">
+                    </div>
+                </div>
             </div>
         </div>
             <div id="buttonDiv">
@@ -36,5 +42,5 @@
   src="https://code.jquery.com/jquery-3.5.0.js"
   integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
   crossorigin="anonymous"></script>
-  <script src="/static/script.js"></script>
+  <script src="../static/script.js"></script>
 </html>
