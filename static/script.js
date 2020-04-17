@@ -6,18 +6,20 @@ $("#update").click(function(){
     var slowduration = document.getElementById("slowduration").value
     var botcolor = document.getElementById("color").value
     var samecolor = document.getElementById("samecolor").checked
-
-    var bannword = document.getElementById("bword").value
-    var bannlist = bannword.split(',')
+    var bannword = document.getElementById("bword").value;
+    if(bannword.length != 0) {
+        var bannlist = bannword.split(',')
+    }
+    else {
+        var bannlist = []
+    }
     var DataJson = { Repeat :  repeat , Bannword : bannlist, Slow: slow, Unique: unique, Slowduration: slowduration, Color: botcolor, Samecolor: samecolor}
-
-    var DataString = JSON.stringify(DataJson)
-    console.log(DataString)
+    console.log(DataJson)
 
     $.ajax({
         url: "/config",
         method: "POST",
-        data: DataString,
+        data: DataJson,
         dataType : "json",
         contentType: "application/json",
     })
