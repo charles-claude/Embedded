@@ -26,7 +26,12 @@ const tmiConfig = {
 
 if (!fs.existsSync("bjtubot.conf")) {
     config = {
-	Repeat: "false"
+	Repeat: false,
+	Slow: false,
+	Slowduration: 30,
+	Unique: false,
+	Color: "#000000",
+	Samecolor: false
     };
 }
 else {
@@ -85,11 +90,20 @@ client.on('chat', (channel, user, message, isSelf) => {
         //cmd
         let cmd = full_cmd[1]
 
+	let me = config.Samecolor ? "/me " : ""; 
+
         switch(cmd) {
-            case "hi":
-            case "Hi":
-                client.say(channel, "Greetings " + user['display-name']);
-                break;
+        case "hi": case "Hi":
+            client.say(channel, me + "Greetings " + user['display-name']);
+            break;
+	case "harry":
+	    client.say(channel, me + "You're a wizard " + user['display-name']);
+	    break;
+	case "bjtu":
+	    client.say(channel, me + "BJTU: " + "http://en.njtu.edu.cn/"
+	default:
+	    client.say(channel, me + "Command " + cmd + " don't exist here !");
+	    
         }
 
     } else {
