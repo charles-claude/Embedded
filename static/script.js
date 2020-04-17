@@ -4,7 +4,7 @@ $("#update").click(function(){
     var slow = document.getElementById("slow").checked
     var unique = document.getElementById("unique").checked
     var slowduration = document.getElementById("slowduration").value
-    var botcolor = document.getElementById("colorpicker").value
+    var botcolor = document.getElementById("color").value
     var samecolor = document.getElementById("samecolor").checked
 
     var bannword = document.getElementById("bword").value
