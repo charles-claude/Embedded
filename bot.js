@@ -74,7 +74,7 @@ client.on('connected', (adress, port) => {
     //set color
     client.say(channel, "/color " + config.Color);
 
-    client.say("nerilwyn", "Kappa");
+    client.say("nerilwyn", "Hello, I am your personnal BJTU Twitch bot !!! Happy to serve you !");
 });
 
 /*client.on('chat', (channel, user, message, isSelf) => {
