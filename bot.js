@@ -40,7 +40,6 @@ else {
     config = JSON.parse(rawdata);
 }
 
-
 console.log(config);
 
 function cmd_parser(msg) {
@@ -99,13 +98,16 @@ client.on('chat', (channel, user, message, isSelf) => {
             client.say(channel, me + "Greetings " + user['display-name']);
             break;
 	case "harry":
-	    client.say(channel, me + "You're a wizard " + user['display-name']);
+	    client.say(channel, me + "You\'re a wizard " + user['display-name']);
 	    break;
 	case "bjtu":
 	    client.say(channel, me + "BJTU: " + "http://en.njtu.edu.cn/");
             break;
+        case "help":
+            client.say(channel, me + "available command: !hi, !harry, !bjtu");
+            break;
 	default:
-	    client.say(channel, me + "Command " + cmd + " don't exist here !");
+	    client.say(channel, me + "Command " + cmd + " doesn't exist here !");
 
         }
 
@@ -115,7 +117,10 @@ client.on('chat', (channel, user, message, isSelf) => {
         if (config.Bannword.some(el => message.includes(el))) {
             client.deletemessage(channel, user.id)
         }
-
+        //repeat mode
+        if (config.Repeat == true) {
+            client.say(channel, user['display-name'] + " said " + message); 
+        }
     }
 
 });

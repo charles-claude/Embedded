@@ -19,7 +19,7 @@ $("#update").click(function(){
     $.ajax({
         url: "/config",
         method: "POST",
-        data: DataJson,
+        data: JSON.stringify(DataJson),
         dataType : "json",
         contentType: "application/json",
     })
